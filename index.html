@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/6.2.0/d3.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>NYC Zipcode Map</title>
+</head>
+<body>
+    
+    
+    <!-- <div id="callout_zipcode_mobile" class="callout_zipcode">
+        <div id="callout_zipcode_text" class="callout_zipcode_text">
+            <h2 class="name instruction"></h2>
+            <h3 class="case_num"></h3>
+        </div>
+    </div> -->
+    <!-- <h2 class="instruction"></h2> -->
+    <!-- <input id="date_selector" type="date" required /> -->
+    <div id="side">
+        
+        <svg id="legendSvg"></svg>
+       
+        <form id="form" action="">
+            <div class="filter">
+                <label for="">Filter</label>
+                <div class="selectWrapper">
+                    <select name="raw_or_per100k" id="raw_or_per100k">
+                        <option value="per100k">Deaths per 100K</option>
+                        <option value="total_deaths">Total Deaths</option>
+                    </select> 
+                </div>
+            </div>
+            
+            <div class="filter">
+                <label>Showing Data For</label>
+                <div class="selectWrapper">
+                    <input
+                    id="date_input"
+                    type="date"
+                    required />
+                    <span class="validity"></span>
+                </div>
+            </div>
+
+            <div class="slidecontainer">
+                <input type="range" min="0" value="" class="slider" id="myRange">
+                <p><span id="demo"></span></p>
+            </div>
+
+            <div class="filter">
+                <label for="">Borough</label>
+                <div class="selectWrapper">
+                    <select name="selectBoro" id="select_boro">
+                        <option selected value> all </option>
+                        <option>Bronx</option>
+                        <option>Brooklyn</option>
+                        <option>Manhattan</option>
+                        <option>Queens</option>
+                        <option>Staten Island</option>
+                      </select>
+                </div>
+            </div>
+
+            <div class="filter">
+                <label for="zipcode_input">Zipcode</label>
+                <div class="selectWrapper">
+                    <input id="zipcode_input" type="text" name="zipcode_input" placeholder="ex: 11201">
+                </div>
+            </div>
+            <div id="submitContainer">
+                <button id="submitBtn">Submit</button>
+            </div>
+            
+        </form>
+    </div>
+    <br>
+    <br>
+    <div id="wrapper">
+        
+        
+        <div id="map_container">
+            <svg id="nyc-zipcode-map">
+                <!-- <g class="path-group"></g> -->
+            </svg>
+            <p id="hoverHint">Hover to interact</p>
+        </div>
+       
+        
+        <!-- <div id="callout">
+            <div id="callout_zipcode_desktop" class="callout_zipcode">
+                <div id="callout_zipcode_text" class="callout_zipcode_text">
+                    <h2 class="name instruction"></h2>
+                    <h3 class="case_num"></h3>
+                </div>
+            </div>
+            <h4 id="rank_title">Highest Mortality Zipcodes</h4>
+        </div> -->
+    </div>
+    
+    <!-- <div id="credit">
+        Data and APIs: John Henry Thompson<br>
+        Development: @__dundery
+    </div> -->
+    <script src="variables.js"></script>
+    <script src="utils.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
